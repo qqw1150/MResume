@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# 允许搜索引擎抓取所有内容
+Allow: /index.html
+Allow: /index-en.html
+Allow: /assets/
+
+# 禁止抓取的文件
+Disallow: /assets/js/
+Disallow: /*.scss$
+
+# 站点地图位置
+Sitemap: https://yoursite.com/sitemap.xml
+
+# 抓取延迟（可选）
+Crawl-delay: 1
+
+# 针对特定搜索引擎的设置
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
