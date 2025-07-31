@@ -109,7 +109,16 @@ function initPrintFunction() {
     });
 
     printButton.addEventListener('click', function() {
-        window.print();
+        // 根据当前页面语言选择对应的打印页面
+        const currentPage = window.location.pathname;
+        const isEnglish = currentPage.includes('index-en.html');
+        const printPage = isEnglish ? 'print-en.html' : 'print.html';
+
+        // 打开专门的打印页面
+        const printWindow = window.open(printPage, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+        if (printWindow) {
+            printWindow.focus();
+        }
     });
 
     document.body.appendChild(printButton);

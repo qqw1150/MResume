@@ -641,44 +641,297 @@ footer {
 
 // 打印样式
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   body {
-    background: white;
-    color: black;
-    padding: 0;
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
   }
 
   .resume-container {
-    box-shadow: none;
-    border-radius: 0;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: white !important;
   }
 
   header {
     background: white !important;
     color: black !important;
+    padding: 20pt 15pt !important;
+    text-align: center !important;
+    page-break-after: avoid !important;
 
     &::before {
-      display: none;
+      display: none !important;
+    }
+
+    h1 {
+      font-size: 18pt !important;
+      color: black !important;
+      margin: 0 0 8pt 0 !important;
+    }
+
+    .subtitle {
+      font-size: 11pt !important;
+      color: #333 !important;
+      margin: 0 0 12pt 0 !important;
+    }
+
+    .contact-info {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 15pt !important;
+      flex-wrap: wrap !important;
+
+      span {
+        font-size: 10pt !important;
+        color: #333 !important;
+      }
     }
   }
 
   .section {
-    border-bottom: 1px solid #ccc;
-    page-break-inside: avoid;
+    padding: 12pt 15pt !important;
+    border-bottom: 1px solid #ddd !important;
+    page-break-inside: avoid !important;
+    margin: 0 !important;
+
+    &:last-child {
+      border-bottom: none !important;
+    }
+
+    h2 {
+      font-size: 14pt !important;
+      color: black !important;
+      margin: 0 0 10pt 0 !important;
+      page-break-after: avoid !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+
+  .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10pt !important;
+    margin-top: 8pt !important;
+  }
+
+  .skill-category {
+    background: #f8f9fa !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4pt !important;
+    padding: 8pt !important;
+    page-break-inside: avoid !important;
+
+    h3 {
+      font-size: 11pt !important;
+      color: black !important;
+      margin: 0 0 6pt 0 !important;
+    }
+
+    ul {
+      margin: 0 !important;
+      padding: 0 !important;
+
+      li {
+        font-size: 9pt !important;
+        color: #333 !important;
+        padding: 2pt 0 !important;
+        border-bottom: none !important;
+      }
+    }
   }
 
   .job, .project {
-    page-break-inside: avoid;
-    break-inside: avoid;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 0 !important;
+    padding: 10pt !important;
+    margin-bottom: 8pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+
+    .job-header, .project-header {
+      display: block !important;
+      margin-bottom: 6pt !important;
+
+      .company, .project-title {
+        font-size: 12pt !important;
+        color: black !important;
+        font-weight: bold !important;
+        display: block !important;
+        margin-bottom: 2pt !important;
+      }
+
+      .job-title, .project-company {
+        font-size: 10pt !important;
+        color: #333 !important;
+        display: block !important;
+        margin-bottom: 2pt !important;
+      }
+
+      .job-date, .project-date {
+        font-size: 9pt !important;
+        color: #666 !important;
+        background: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        display: block !important;
+      }
+    }
+
+    .job-content, .project-content {
+      h4 {
+        font-size: 11pt !important;
+        color: black !important;
+        background: #f0f0f0 !important;
+        padding: 4pt 6pt !important;
+        border-radius: 0 !important;
+        border-left: 2pt solid #333 !important;
+        margin: 6pt 0 4pt 0 !important;
+      }
+
+      ul {
+        margin: 0 !important;
+        padding: 0 0 0 12pt !important;
+
+        li {
+          font-size: 9pt !important;
+          color: #333 !important;
+          padding: 2pt 0 !important;
+          border-bottom: none !important;
+          line-height: 1.3 !important;
+
+          &::before {
+            content: "• " !important;
+            color: #666 !important;
+          }
+
+          strong {
+            color: black !important;
+            font-weight: bold !important;
+          }
+        }
+      }
+
+      .project-description {
+        font-size: 9pt !important;
+        color: #333 !important;
+        margin-bottom: 6pt !important;
+        line-height: 1.3 !important;
+      }
+    }
+  }
+
+  .education-item {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    padding: 8pt !important;
+    page-break-inside: avoid !important;
+
+    h3 {
+      font-size: 11pt !important;
+      color: black !important;
+      margin: 0 0 4pt 0 !important;
+    }
+
+    .degree {
+      font-size: 10pt !important;
+      color: #333 !important;
+    }
+
+    .education-description {
+      font-size: 9pt !important;
+      color: #333 !important;
+      margin-top: 4pt !important;
+      line-height: 1.3 !important;
+    }
+  }
+
+  .advantages-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8pt !important;
+    margin-top: 8pt !important;
+  }
+
+  .advantage-item {
+    background: #f8f9fa !important;
+    border: 1px solid #ddd !important;
+    padding: 8pt !important;
+    text-align: left !important;
+    page-break-inside: avoid !important;
+
+    h3 {
+      font-size: 10pt !important;
+      color: black !important;
+      margin: 0 0 4pt 0 !important;
+    }
+
+    p {
+      font-size: 9pt !important;
+      color: #333 !important;
+      margin: 0 !important;
+      line-height: 1.3 !important;
+    }
   }
 
   footer {
     background: white !important;
     color: black !important;
+    padding: 12pt 15pt !important;
+    text-align: center !important;
+    border-top: 1px solid #ddd !important;
+    page-break-inside: avoid !important;
+
+    .footer-content p {
+      font-size: 9pt !important;
+      color: #666 !important;
+      margin: 2pt 0 !important;
+    }
   }
 
+  // 隐藏不需要打印的元素
+  .print-button,
+  .lang-button,
+  .theme-button,
+  .back-to-top {
+    display: none !important;
+  }
+
+  // 链接样式
   a {
     color: black !important;
     text-decoration: none !important;
+
+    &::after {
+      content: " (" attr(href) ")" !important;
+      font-size: 8pt !important;
+      color: #666 !important;
+    }
+  }
+
+  // 确保页面分页
+  .section:not(:last-child) {
+    page-break-after: auto !important;
+  }
+
+  .job:last-child,
+  .project:last-child {
+    margin-bottom: 0 !important;
   }
 }
 

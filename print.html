@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全栈开发工程师简历 - 打印版</title>
+  <style>
+    /* 打印专用样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Microsoft YaHei', 'SimSun', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.3;
+      color: #000;
+      background: #fff;
+      padding: 15pt;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      border-bottom: 2pt solid #000;
+      padding-bottom: 12pt;
+      margin-bottom: 15pt;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+      font-weight: bold;
+      margin-bottom: 8pt;
+    }
+
+    .header .subtitle {
+      font-size: 11pt;
+      color: #333;
+      margin-bottom: 10pt;
+    }
+
+    .header .contact {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 12pt;
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: bold;
+      border-bottom: 1pt solid #333;
+      padding-bottom: 2pt;
+      margin-bottom: 8pt;
+      page-break-after: avoid;
+    }
+
+    .content-block {
+      margin-bottom: 8pt;
+      page-break-inside: auto;
+    }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5pt;
+      border-left: 3pt solid #333;
+      padding-left: 8pt;
+    }
+
+    .company-name {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+
+    .job-title {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .date {
+      font-size: 9pt;
+      color: #666;
+    }
+
+    .project-title {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 3pt;
+    }
+
+    .project-subtitle {
+      font-size: 9pt;
+      color: #666;
+      margin-bottom: 5pt;
+    }
+
+    .description {
+      font-size: 10pt;
+      margin-bottom: 5pt;
+      text-align: justify;
+    }
+
+    .achievements {
+      margin-left: 15pt;
+    }
+
+    .achievements li {
+      font-size: 9pt;
+      margin-bottom: 2pt;
+      list-style-type: disc;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15pt;
+    }
+
+    .skill-category h3 {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 5pt;
+      border-bottom: 1pt solid #ccc;
+      padding-bottom: 2pt;
+    }
+
+    .skill-category ul {
+      list-style: none;
+    }
+
+    .skill-category li {
+      font-size: 9pt;
+      padding: 1pt 0;
+      border-bottom: 0.5pt dotted #ccc;
+    }
+
+    .education-item {
+      border-left: 3pt solid #666;
+      padding-left: 8pt;
+    }
+
+    .education-item h3 {
+      font-size: 11pt;
+      font-weight: bold;
+    }
+
+    .degree {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .footer {
+      margin-top: 20pt;
+      padding-top: 10pt;
+      border-top: 1pt solid #ccc;
+      text-align: center;
+      font-size: 9pt;
+      color: #666;
+    }
+
+    /* 确保打印时的样式 */
+    @media print {
+      body {
+        padding: 12pt;
+        font-size: 11pt;
+        line-height: 1.3;
+      }
+
+      .section {
+        margin-bottom: 12pt;
+        page-break-inside: auto;
+      }
+
+      .content-block {
+        margin-bottom: 8pt;
+        page-break-inside: auto;
+      }
+
+      .section-title {
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+      }
+
+      .company-header {
+        page-break-after: avoid;
+        orphans: 2;
+      }
+
+      .project-title {
+        page-break-after: avoid;
+        orphans: 2;
+      }
+
+      .achievements {
+        orphans: 2;
+        widows: 2;
+      }
+
+      .skills-grid {
+        page-break-inside: auto;
+      }
+
+      .skill-category {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
+
+    /* 控制按钮样式 */
+    .print-controls {
+      position: fixed;
+      top: 10pt;
+      right: 10pt;
+      background: #f0f0f0;
+      padding: 8pt;
+      border-radius: 4pt;
+      border: 1pt solid #ccc;
+    }
+
+    .print-controls button {
+      margin: 0 3pt;
+      padding: 5pt 10pt;
+      border: 1pt solid #333;
+      background: #fff;
+      cursor: pointer;
+      font-size: 9pt;
+    }
+
+    .print-controls button:hover {
+      background: #e0e0e0;
+    }
+
+    @media print {
+      .print-controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-controls">
+    <button onclick="window.print()">🖨️ 打印</button>
+    <button onclick="window.close()">❌ 关闭</button>
+  </div>
+
+  <div class="header">
+    <h1>全栈开发工程师</h1>
+    <div class="subtitle">10年+互联网开发经验 | 精通多技术栈 | 专注商业项目落地</div>
+    <div class="contact">
+      📧 邮箱：1452184808@qq.com | 💬 微信：qqw1452184808 | 🌐 GitHub：github.com/qqw1150
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">个人简介</div>
+    <div class="description">
+      拥有10年+互联网行业全栈开发经验，精通PHP、Golang、React、Uniapp等主流技术栈。曾在多家知名互联网公司担任核心开发角色，主导过跨境电商ERP系统、游戏平台、区块链交易平台、NFT交易平台等多个大型商业项目的设计与开发。具备从需求分析、架构设计、开发实现到部署运维的全流程能力，能够独立承担复杂项目的技术攻关与团队协作。
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">核心技能</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>后端开发</h3>
+        <ul>
+          <li>PHP (Laravel, CI框架)</li>
+          <li>Golang (Gin框架)</li>
+          <li>MySQL, Redis, MongoDB</li>
+          <li>RESTful API设计</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>前端开发</h3>
+        <ul>
+          <li>React, Vue.js</li>
+          <li>Uniapp多端开发</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>响应式设计</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>运维部署</h3>
+        <ul>
+          <li>Docker容器化</li>
+          <li>Jenkins CI/CD</li>
+          <li>Git版本控制</li>
+          <li>Linux服务器管理</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>业务领域</h3>
+        <ul>
+          <li>跨境电商ERP</li>
+          <li>支付系统集成</li>
+          <li>区块链应用</li>
+          <li>游戏聚合平台</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">工作经历</div>
+    
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">上海月升于海信息技术有限公司</div>
+          <div class="job-title">开发工程师</div>
+        </div>
+        <div class="date">2023.08 - 2025.02</div>
+      </div>
+      
+      <div class="project-title">CSGO道具交易平台 (2023.08-2025.02)</div>
+      <ul class="achievements">
+        <li>多端开发：使用Uniapp开发一套代码适配H5网页、Android和iOS App，提高开发效率</li>
+        <li>API对接：负责前端与Steam API的对接，实现玩家登录授权和道具数据实时显示</li>
+        <li>交易功能：主导饰品上架、下架、库存管理和交易页面开发，支持高并发操作</li>
+        <li>后端API：使用PHP完成toB API设计，包括限流、签名认证、饰品查询等接口</li>
+      </ul>
+      
+      <div class="project-title">NFT交易平台</div>
+      <ul class="achievements">
+        <li>React开发：使用React构建NFT交易平台H5页面，代码结构清晰</li>
+        <li>区块链对接：负责前端与区块链API对接，实现用户钱包登录、NFT资产展示</li>
+        <li>核心功能：主导NFT上架、下架、浏览和交易核心页面开发</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">武汉仕耀科技有限公司</div>
+          <div class="job-title">开发工程师</div>
+        </div>
+        <div class="date">2021.06 - 2023.08</div>
+      </div>
+      <ul class="achievements">
+        <li>跨境电商ERP：主要负责eBay和Shopee跨境电商ERP系统的开发与维护</li>
+        <li>平台接入：负责新Walmart跨境电商平台的接入以及ERP新模块开发</li>
+        <li>技术栈：使用Laravel框架进行开发，部分功能使用Golang(Gin框架)</li>
+        <li>核心业绩：解决大日志文件下载慢问题；成功接入沃尔玛平台到本地ERP系统</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">北京华数互动科技有限公司</div>
+          <div class="job-title">开发工程师</div>
+        </div>
+        <div class="date">2017.09 - 2021.06</div>
+      </div>
+      <ul class="achievements">
+        <li>网站维护：改版和维护7k7k网站及支付系统</li>
+        <li>活动开发：进行日常网站活动开发，提升用户参与度</li>
+        <li>技术栈：使用CI框架+MySQL+Redis，Jenkins进行项目部署</li>
+        <li>核心业绩：改版7k7k主站；接入第三方大型网页游戏；开发抽奖活动系统</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">北京融科汇通技术有限公司</div>
+          <div class="job-title">PHP开发工程师</div>
+        </div>
+        <div class="date">2015.03 - 2017.05</div>
+      </div>
+      <ul class="achievements">
+        <li>项目负责：全权负责PHP项目开发，主要项目是卫计委资金暂存管理系统</li>
+        <li>全流程参与：完成项目需求分析、项目设计、代码编程</li>
+        <li>客户沟通：主要与客户进行沟通，负责解决各种业务问题和编码问题</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">重点项目经历</div>
+    
+    <div class="content-block">
+      <div class="project-title">TgBot代币交易平台</div>
+      <div class="project-subtitle">上海月升于海信息技术有限公司 | 2024.02 - 2025.04</div>
+      <div class="description">
+        基于Telegram Bot API开发的数字货币交易自动化系统，专注于Solana区块链生态，实现了多维度交易管理功能。
+      </div>
+      <ul class="achievements">
+        <li>负责Telegram Bot API的对接与功能开发，主导Bot前端项目的架构设计</li>
+        <li>完成区块链API的集成与调用，负责前端核心业务逻辑的开发与优化</li>
+        <li>实现智能交易策略、多级返佣系统、Gas费优化等核心功能</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="project-title">Skindeer饰品交易平台</div>
+      <div class="project-subtitle">上海月升于海信息技术有限公司 | 2023.08 - 2025.02</div>
+      <div class="description">
+        专注于CSGO饰品交易的综合性平台，采用B2C和B2B双端运营模式，为个人用户和企业客户提供安全高效的饰品交易服务。
+      </div>
+      <ul class="achievements">
+        <li>主导企业级API接口设计与开发</li>
+        <li>负责支付系统核心模块架构与实现</li>
+        <li>成功集成Stripe支付网关与Tron区块链技术</li>
+        <li>参与整个项目的开发和维护，确保平台稳定运行</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="project-title">7k7k主站</div>
+      <div class="project-subtitle">北京华数互动科技有限公司 | 2020.01 - 2023.08</div>
+      <div class="description">
+        国内领先的网页游戏聚合平台，为玩家提供数千款精品页游的在线体验。
+      </div>
+      <ul class="achievements">
+        <li>负责7k7k游戏平台的整体项目维护，确保系统稳定运行</li>
+        <li>负责支付模块的日常维护与功能迭代，对接第三方支付接口</li>
+        <li>独立设计并开发福利抽奖活动系统，包括活动逻辑实现和数据统计</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">教育经历</div>
+    <div class="education-item">
+      <h3>湖北理工学院</h3>
+      <div class="degree">大专 / 应用电子技术</div>
+      <div class="description">
+        专业课程涵盖电子技术基础、计算机原理、程序设计等，为后续从事软件开发工作奠定了扎实的技术基础。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>本简历最后更新时间：2024年12月</p>
+  </div>
+</body>
+</html>

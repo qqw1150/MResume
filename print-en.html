@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-stack Developer Resume - Print Version</title>
+  <style>
+    /* Print-specific styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', 'Times New Roman', serif;
+      font-size: 11pt;
+      line-height: 1.3;
+      color: #000;
+      background: #fff;
+      padding: 15pt;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      border-bottom: 2pt solid #000;
+      padding-bottom: 12pt;
+      margin-bottom: 15pt;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+      font-weight: bold;
+      margin-bottom: 8pt;
+    }
+
+    .header .subtitle {
+      font-size: 11pt;
+      color: #333;
+      margin-bottom: 10pt;
+    }
+
+    .header .contact {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 12pt;
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: bold;
+      border-bottom: 1pt solid #333;
+      padding-bottom: 2pt;
+      margin-bottom: 8pt;
+      page-break-after: avoid;
+    }
+
+    .content-block {
+      margin-bottom: 8pt;
+      page-break-inside: auto;
+    }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5pt;
+      border-left: 3pt solid #333;
+      padding-left: 8pt;
+    }
+
+    .company-name {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+
+    .job-title {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .date {
+      font-size: 9pt;
+      color: #666;
+    }
+
+    .project-title {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 3pt;
+    }
+
+    .project-subtitle {
+      font-size: 9pt;
+      color: #666;
+      margin-bottom: 5pt;
+    }
+
+    .description {
+      font-size: 10pt;
+      margin-bottom: 5pt;
+      text-align: justify;
+    }
+
+    .achievements {
+      margin-left: 15pt;
+    }
+
+    .achievements li {
+      font-size: 9pt;
+      margin-bottom: 2pt;
+      list-style-type: disc;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15pt;
+    }
+
+    .skill-category h3 {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 5pt;
+      border-bottom: 1pt solid #ccc;
+      padding-bottom: 2pt;
+    }
+
+    .skill-category ul {
+      list-style: none;
+    }
+
+    .skill-category li {
+      font-size: 9pt;
+      padding: 1pt 0;
+      border-bottom: 0.5pt dotted #ccc;
+    }
+
+    .education-item {
+      border-left: 3pt solid #666;
+      padding-left: 8pt;
+    }
+
+    .education-item h3 {
+      font-size: 11pt;
+      font-weight: bold;
+    }
+
+    .degree {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .footer {
+      margin-top: 20pt;
+      padding-top: 10pt;
+      border-top: 1pt solid #ccc;
+      text-align: center;
+      font-size: 9pt;
+      color: #666;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 12pt;
+        font-size: 11pt;
+        line-height: 1.3;
+      }
+
+      .section {
+        margin-bottom: 12pt;
+        page-break-inside: auto;
+      }
+
+      .content-block {
+        margin-bottom: 8pt;
+        page-break-inside: auto;
+      }
+
+      .section-title {
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+      }
+
+      .company-header {
+        page-break-after: avoid;
+        orphans: 2;
+      }
+
+      .project-title {
+        page-break-after: avoid;
+        orphans: 2;
+      }
+
+      .achievements {
+        orphans: 2;
+        widows: 2;
+      }
+
+      .skills-grid {
+        page-break-inside: auto;
+      }
+
+      .skill-category {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
+
+    /* Control buttons */
+    .print-controls {
+      position: fixed;
+      top: 10pt;
+      right: 10pt;
+      background: #f0f0f0;
+      padding: 8pt;
+      border-radius: 4pt;
+      border: 1pt solid #ccc;
+    }
+
+    .print-controls button {
+      margin: 0 3pt;
+      padding: 5pt 10pt;
+      border: 1pt solid #333;
+      background: #fff;
+      cursor: pointer;
+      font-size: 9pt;
+    }
+
+    .print-controls button:hover {
+      background: #e0e0e0;
+    }
+
+    @media print {
+      .print-controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-controls">
+    <button onclick="window.print()">🖨️ Print</button>
+    <button onclick="window.close()">❌ Close</button>
+  </div>
+
+  <div class="header">
+    <h1>Full-stack Developer</h1>
+    <div class="subtitle">8+ Years Internet Development Experience | Multi-tech Stack Expert | Focus on Commercial Project Implementation</div>
+    <div class="contact">
+      📧 Email: 1452184808@qq.com | 💬 WeChat: qqw1452184808 | 🌐 GitHub: github.com/qqw1150
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="description">
+      Experienced full-stack developer with 8+ years in the internet industry, proficient in PHP, Golang, React, Uniapp and other mainstream technology stacks. Served as core developer in multiple renowned internet companies, leading the design and development of large-scale commercial projects including cross-border e-commerce ERP systems, gaming platforms, blockchain trading platforms, and NFT trading platforms. Possess comprehensive capabilities from requirement analysis, architecture design, development implementation to deployment and maintenance.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Core Skills</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Backend Development</h3>
+        <ul>
+          <li>PHP (Laravel, CI Framework)</li>
+          <li>Golang (Gin Framework)</li>
+          <li>MySQL, Redis, MongoDB</li>
+          <li>RESTful API Design</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Frontend Development</h3>
+        <ul>
+          <li>React, Vue.js</li>
+          <li>Uniapp Multi-platform Development</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>DevOps & Deployment</h3>
+        <ul>
+          <li>Docker Containerization</li>
+          <li>Jenkins CI/CD</li>
+          <li>Git Version Control</li>
+          <li>Linux Server Management</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Business Domains</h3>
+        <ul>
+          <li>Cross-border E-commerce ERP</li>
+          <li>Payment System Integration</li>
+          <li>Blockchain Applications</li>
+          <li>Gaming Platform Development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+    
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">Shanghai Yuesheng Yuhai Information Technology Co., Ltd.</div>
+          <div class="job-title">Software Developer</div>
+        </div>
+        <div class="date">2023.08 - 2025.02</div>
+      </div>
+      
+      <div class="project-title">CSGO Item Trading Platform (2023.08-2025.02)</div>
+      <ul class="achievements">
+        <li>Multi-platform Development: Used Uniapp to develop one codebase for H5 web, Android and iOS apps</li>
+        <li>API Integration: Responsible for frontend integration with Steam API, implementing player login and real-time item data display</li>
+        <li>Trading Features: Led development of item listing, delisting, inventory management and trading pages</li>
+        <li>Backend API: Used PHP to complete toB API design including rate limiting, signature authentication, item queries</li>
+      </ul>
+      
+      <div class="project-title">NFT Trading Platform</div>
+      <ul class="achievements">
+        <li>React Development: Built NFT trading platform H5 pages using React with clear code structure</li>
+        <li>Blockchain Integration: Responsible for frontend integration with blockchain APIs</li>
+        <li>Core Features: Led development of NFT listing, delisting, browsing and trading core pages</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">Wuhan Shiyao Technology Co., Ltd.</div>
+          <div class="job-title">Software Developer</div>
+        </div>
+        <div class="date">2021.06 - 2023.08</div>
+      </div>
+      <ul class="achievements">
+        <li>Cross-border E-commerce ERP: Mainly responsible for eBay and Shopee ERP system development and maintenance</li>
+        <li>Platform Integration: Responsible for new Walmart cross-border e-commerce platform integration</li>
+        <li>Tech Stack: Used Laravel framework for development, some features using Golang (Gin framework)</li>
+        <li>Key Achievements: Solved large log file slow download issues; Successfully integrated Walmart platform</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">Beijing Huashu Interactive Technology Co., Ltd.</div>
+          <div class="job-title">Software Developer</div>
+        </div>
+        <div class="date">2017.09 - 2021.06</div>
+      </div>
+      <ul class="achievements">
+        <li>Website Maintenance: Redesigned and maintained 7k7k website and payment system</li>
+        <li>Activity Development: Conducted daily website activity development to improve user engagement</li>
+        <li>Tech Stack: Used CI framework + MySQL + Redis, Jenkins for project deployment</li>
+        <li>Key Achievements: Redesigned 7k7k main site; Integrated third-party large-scale web games</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="company-header">
+        <div>
+          <div class="company-name">Beijing Rongke Huitong Technology Co., Ltd.</div>
+          <div class="job-title">PHP Developer</div>
+        </div>
+        <div class="date">2015.03 - 2017.05</div>
+      </div>
+      <ul class="achievements">
+        <li>Project Leadership: Fully responsible for PHP project development, main project was Health Commission fund custody management system</li>
+        <li>Full Process Participation: Completed project requirement analysis, project design, code programming</li>
+        <li>Client Communication: Mainly communicated with clients, responsible for solving various business problems</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Key Project Experience</div>
+    
+    <div class="content-block">
+      <div class="project-title">TgBot Token Trading Platform</div>
+      <div class="project-subtitle">Shanghai Yuesheng Yuhai Information Technology Co., Ltd. | 2024.02 - 2025.04</div>
+      <div class="description">
+        A digital currency trading automation system based on Telegram Bot API, focusing on Solana blockchain ecosystem with multi-dimensional trading management functions.
+      </div>
+      <ul class="achievements">
+        <li>Responsible for Telegram Bot API integration and feature development</li>
+        <li>Completed blockchain API integration and calls, responsible for frontend core business logic development</li>
+        <li>Implemented intelligent trading strategies, multi-level commission system, Gas fee optimization</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="project-title">Skindeer Item Trading Platform</div>
+      <div class="project-subtitle">Shanghai Yuesheng Yuhai Information Technology Co., Ltd. | 2023.08 - 2025.02</div>
+      <div class="description">
+        A comprehensive platform focusing on CSGO item trading, adopting B2C and B2B dual-end operation model for individual users and enterprise clients.
+      </div>
+      <ul class="achievements">
+        <li>Led enterprise-level API interface design and development</li>
+        <li>Responsible for payment system core module architecture and implementation</li>
+        <li>Successfully integrated Stripe payment gateway and Tron blockchain technology</li>
+        <li>Participated in entire project development and maintenance</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <div class="project-title">7k7k Main Site</div>
+      <div class="project-subtitle">Beijing Huashu Interactive Technology Co., Ltd. | 2020.01 - 2023.08</div>
+      <div class="description">
+        Leading web game aggregation platform in China, providing online experience for thousands of premium web games.
+      </div>
+      <ul class="achievements">
+        <li>Responsible for 7k7k gaming platform overall project maintenance, ensuring system stable operation</li>
+        <li>Responsible for payment module daily maintenance and feature iteration</li>
+        <li>Independently designed and developed welfare lottery activity system</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="education-item">
+      <h3>Hubei Polytechnic University</h3>
+      <div class="degree">Associate Degree / Applied Electronic Technology</div>
+      <div class="description">
+        Professional courses covered electronic technology fundamentals, computer principles, programming design, laying a solid technical foundation for subsequent software development work.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Resume last updated: December 2024</p>
+  </div>
+</body>
+</html>
